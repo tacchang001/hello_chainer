@@ -105,3 +105,8 @@ venv.bak/
 
 # PyCharm
 .idea/
+
+# 画像は普通いらない
+*.png
+*.jpg
+*.log
