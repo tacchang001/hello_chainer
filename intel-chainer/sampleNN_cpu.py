@@ -79,6 +79,8 @@ def learning():
     # モデルを使う準備。オブジェクトを生成
     model = L.Classifier(MyChain())
 
+#    model.to_intel64()
+
     # 最適化手法の設定。今回はAdamを使ったが他にAdaGradやSGDなどがある。
     optimizer = optimizers.Adam()
     optimizer.setup(model)
@@ -110,5 +112,6 @@ def learning():
 
 
 if __name__ == "__main__":
+#    chainer.using_config('use_ideep', 'auto')
     learning()
     print("write to " + str(resultFn))
