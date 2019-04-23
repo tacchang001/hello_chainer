@@ -1,27 +1,41 @@
 write to sampleNN.model
-
 real    4m32.858s
 user    18m12.502s
 sys     30m40.430s
 
 ---- iDeep(not use GPU) ----
 write to sampleNN.model
-
 real    3m24.600s
 user    20m6.093s
 sys     0m17.830s
 
----- iDeep(use GPU) ----
+-- Intel Chainer(v5.4) ---
 write to sampleNN.model
+real 352.80
+user 4082.17
+sys 72.02
 
+-- Intel Chainer(v5.0.0a1) ---
+write to sampleNN.model
+real 340.95
+user 3984.50
+sys 67.99
+
+---- iDeep(use GPU) Chainer 5.4 ----
+write to sampleNN.model
 real    3m28.586s
 user    20m31.109s
 sys     0m18.567s
 
+-- Intel Chainer(v5.0.0a1) ---
+write to sampleNN.model
+real 362.52
+user 4191.65
+sys 74.85
+
 
 ---- iDeep(use GPU/build MISS ??/not use MKL) ----
 write to sampleNN.model
-
 real    5m30.720s
 user    64m39.506s
 sys     1m2.570s

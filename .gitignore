@@ -116,3 +116,4 @@ mldata/
 
 # Chainer
 *.model
+snapshot_*

@@ -12,6 +12,8 @@ import chainer.links as L
 from chainer.training import extensions
 from chainer.datasets import tuple_dataset
 
+import time
+
 # データの読み込み
 df = pd.read_csv("sampleNN.csv")
 
@@ -94,8 +96,14 @@ def learning():
     # trainer.extend(extensions.ProgressBar())  # プログレスバーの表示
     trainer.extend(extensions.snapshot(), trigger=(1, 'epoch'))  # モデルの保存
 
+    time_sta = time.perf_counter()
+
     # 学習の実行
     trainer.run()
+
+    time_end = time.perf_counter()
+    tim = time_end - time_sta
+    print(tim)
 
     # モデルの保存
     serializers.save_npz(resultFn, model)
